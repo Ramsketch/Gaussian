@@ -22,13 +22,10 @@ triangular form, ensuring no division by zero.
 
 ## Program:
 ```
+'''Program to solve a matrix using Gaussian elimination without partial pivoting.
+Developed by: Ramkumar S
+RegisterNumber: 212225240115
 '''
-Program to solve a matrix using Gaussian elimination without partial pivoting.
-Developed by: KABELAN G K
-RegisterNumber: 24900985
-'''
-```
-```
 import numpy as np
 import sys
 n=int(input())
@@ -38,30 +35,25 @@ for i in range(n):
     for j in range(n+1):
         a[i][j]=float(input())
 for i in range(n):
-    if a[i][i]==0.0:
-        sys.exit("Divide by zero detected!")
-        
+    if a[i][j]==0:
+        sys.exit('Divide by zero detected!')
     for j in range(i+1,n):
         ratio=a[j][i]/a[i][i]
         for k in range(n+1):
             a[j][k]=a[j][k]-ratio*a[i][k]
-
 x[n-1]=a[n-1][n]/a[n-1][n-1]
-
 for i in range(n-2,-1,-1):
     x[i]=a[i][n]
     for j in range(i+1,n):
         x[i]=x[i]-a[i][j]*x[j]
     x[i]=x[i]/a[i][i]
-        
 for i in range(n):
-    print('X%d = %0.2f' %(i,x[i]),end=' ')
-
+    print('X%d = %0.2f'%(i,x[i]),end=' ')
 ```
 
 ## Output:
-![Output1](CODE_page-0001.jpg)
-![Output2](CODE_page-0002.jpg)
+<img width="1907" height="918" alt="image" src="https://github.com/user-attachments/assets/ea4582ec-8d27-4ddc-8f02-f37562856687" />
+<img width="1871" height="900" alt="image" src="https://github.com/user-attachments/assets/a64ca591-f48b-4da6-803b-df429e24dc37" />
 
 ## Result:
 Thus the program to find the solution of a matrix using Gaussian Elimination is written and verified using python programming.
